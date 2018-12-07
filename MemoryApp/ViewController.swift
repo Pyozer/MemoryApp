@@ -59,8 +59,8 @@ class ViewController: UIViewController {
         label.attributedText = NSAttributedString(
             string: text,
             attributes: [
-                NSAttributedStringKey(rawValue: ".strokeWidth"): 5,
-                NSAttributedStringKey(rawValue: ".strokeColor"): #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+                NSAttributedString.Key(rawValue: ".strokeWidth"): 5,
+                NSAttributedString.Key(rawValue: ".strokeColor"): #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
             ]
         )
     }
@@ -70,10 +70,10 @@ class ViewController: UIViewController {
             let button = cardsButton[index];
             let card = game.cards[index];
             if card.isFaceUp {
-                button.setTitle(emoji(for: card), for: UIControlState.normal)
+                button.setTitle(emoji(for: card), for: UIControl.State.normal)
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             } else {
-                button.setTitle("", for: UIControlState.normal)
+                button.setTitle("", for: UIControl.State.normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) : themeManager.getTheme().color
             }
         }
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         let alert = UIAlertController(
             title: "End of game",
             message: "You finish the game !\nYour score is " + String(game.score),
-            preferredStyle: UIAlertControllerStyle.alert)
+            preferredStyle: UIAlertController.Style.alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in

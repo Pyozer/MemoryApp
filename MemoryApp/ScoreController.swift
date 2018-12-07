@@ -25,7 +25,7 @@ class ScoreController : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     // cell height
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
